@@ -49,6 +49,39 @@
                 <use href="./images/icons.svg#close"></use>
               </svg>
             </button>
+            <h2 class="window-h">Leave your contacts and we will call you back</h2>
+            <form class="window-form" action="">
+              <label class="windows-label">
+                <span class="form-description">Name</span>
+                <input autofocus class="form-input" type="text" name="name" 
+                    required placeholder=" ">
+              </label>
+              <label class="windows-label">
+                <span class="form-description">Phone</span>
+                <input class="form-input" type="tel" name="phone_namber" 
+                    required placeholder=" " pattern="^[+][0-9]+$" 
+                    title="Enter the number using + and numbers">
+              </label>
+              <label class="windows-label">
+                <span class="form-description">Email</span>
+                <input class="form-input" type="email" name="email" 
+                    required placeholder=" ">
+              </label>
+              <label class="windows-label">
+                <span class="form-description">Comment</span>
+                <textarea class="form-input" name="Comment" rows="5" placeholder="Text input"></textarea>
+              </label>
+            
+              <label class="flex privacy-polisy">
+                <input class="windows-checkbox" type="checkbox" name="privacy-polisy" value="privacy-polisy" required>
+                <span class="polisy-text">I accept the terms and conditions of the <a class="polisy-link" href="/">Privacy Policy</a></span>
+              </label>
+
+              <button class="button-form" type="submit">
+                Send
+              </button>
+            </form>
+
           </div>
         </div>
       </section>
@@ -340,15 +373,15 @@
     </main>
     <!--footer-->
     <footer class="footer">
-      <div class="container footer-flex">
-        <div class="footer-container">
+      <ul class="container footer-flex">
+        <li class="footer-container">
           <a class="logo-footer" href="./index.html"><span class="logo-w-footer">WEB</span><span class="logo-s-footer">STUDIO</span></a>
           <p class="footer-p">
             Increase the flow of customers and sales for your business with
             digital marketing & growth solutions.
           </p>
-        </div>
-        <div class="footer-container">
+        </li>
+        <li class="footer-container">
           <h3 class="footer-h">Social media</h3>
           <ul class="flex-icon">
             <li>
@@ -379,9 +412,26 @@
                 </svg>
               </a>
             </li>
+
           </ul>
-        </div>
-      </div>
+        </li>
+        <li class="footer-container">
+          <h3 class="footer-h">Subscribe</h3>
+            <form class="form-flex" name="subscribe">
+              <label>
+                <input class="footer-form" type="email" name="email" placeholder="E-mail">
+              </label>
+            
+              <button class="button-subscribe" type="submit">
+                Subscribe
+                <svg class="team-icon" width="24px" height="20px">
+                  <use href="./images/icons.svg#icon-telegram"></use>
+                </svg>
+              </button>
+
+            </form>
+        </li>
+      </ul>
     </footer>
     <script src="./js/modal.js"></script>
   </body>
