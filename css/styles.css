@@ -527,6 +527,7 @@ img {
 }
 .windows-label {
   display: flex;
+  position: relative;
   flex-direction: column;
   align-items: flex-start;
   margin-bottom: 8px;
@@ -541,46 +542,89 @@ img {
 .form-input {
   outline: none;
   width: 100%;
-  padding: 11px 16px;
+  padding: 11px 0;
+  padding-left: 39px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   resize: none;
 }
-.form-input:focus-within {
-  border: 1px solid var(--color-hader);
+.form-input:focus-within,
+.form-textarea:focus-within {
+  animation-name: hoverIcons;
+  animation-duration: 250ms;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  animation-fill-mode: forwards;
+}
+.form-input:focus-within + .form-icon {
+  fill: var(--color-bluebatton);
 }
 .form-input:not(:placeholder-shown):invalid {
   border: 1px solid rgba(239, 66, 8, 0.4);
 }
-.form-input::placeholder {
+.form-textarea {
+  outline: none;
+  width: 100%;
+  padding: 11px 0;
+  padding-left: 16px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  resize: none;
+}
+.form-textarea::placeholder {
   font-weight: 400;
   font-size: 12px;
   line-height: 1.3;
   letter-spacing: 0.04em;
   color: rgba(117, 117, 117, 0.5);
 }
+
+
+.form-icon {
+  position: absolute;
+  display: inline-block;
+  left: 19px;
+  bottom: 14px;
+  fill: var(--color-text);
+}
+
+/* checkbox *//* checkbox *//* checkbox */
 .privacy-polisy {
+  display: flex;
   margin-bottom: 24px;
   align-items: center
 }
-.windows-checkbox {
-  margin-right: 8px;
-  width: 16px;
-  height: 16px;
-  border: 1.25px solid #2E2F42;
-  border-radius: 2px;
-}
-.polisy-text {
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 1.3;
-  letter-spacing: 0.04em;
-  color: #757575;
-}
-.polisy-link {
-  text-decoration: inherit;
-  text-decoration: underline;
-}
+  .checkbox-input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+  .windows-checkbox {
+    margin-right: 8px;
+    width: 16px;
+    height: 16px;
+    border: 1.25px solid #2E2F42;
+    border-radius: 2px;
+  }
+  .checkbox-input:checked + .windows-checkbox{
+    background-image: url(../images/click.svg);
+    background-size: contain;
+    background-origin: border-box ;
+    background-origin: content-box;
+    border: none;
+
+  }
+  .polisy-text {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.3;
+    letter-spacing: 0.04em;
+    color: #757575;
+  }
+  .polisy-link {
+    text-decoration: inherit;
+    text-decoration: underline;
+  }
+/* checkbox *//* checkbox *//* checkbox */
 .button-form {
   padding: 16px 32px;
   width: 169px;
@@ -596,7 +640,6 @@ img {
   letter-spacing: 0.04em;
   color: var(--color-text-light);
   }
-
 .button-form:hover {
   animation-name: hoverBlueButton;
   animation-duration: 250ms;

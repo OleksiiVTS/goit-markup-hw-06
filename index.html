@@ -53,27 +53,37 @@
             <form class="window-form" action="">
               <label class="windows-label">
                 <span class="form-description">Name</span>
-                <input autofocus class="form-input" type="text" name="name" 
+                <input autofocus class="form-input" type="text" name="name"
                     required placeholder=" ">
+                    <svg class="form-icon " width="12px" height="12px">
+                      <use href="./images/icons.svg#icon-name"></use>
+                    </svg>
               </label>
               <label class="windows-label">
                 <span class="form-description">Phone</span>
-                <input class="form-input" type="tel" name="phone_namber" 
+                <input class="form-input" type="tel" name="phone_namber"
                     required placeholder=" " pattern="^[+][0-9]+$" 
                     title="Enter the number using + and numbers">
+                    <svg class="form-icon " width="13px" height="13px">
+                      <use href="./images/icons.svg#icon-phone"></use>
+                    </svg>
               </label>
               <label class="windows-label">
                 <span class="form-description">Email</span>
-                <input class="form-input" type="email" name="email" 
+                <input class="form-input" type="email" name="email"
                     required placeholder=" ">
+                    <svg class="form-icon" width="16px" height="12px">
+                      <use href="./images/icons.svg#icon-mail"></use>
+                    </svg>
               </label>
               <label class="windows-label">
                 <span class="form-description">Comment</span>
-                <textarea class="form-input" name="Comment" rows="5" placeholder="Text input"></textarea>
+                <textarea class="form-textarea" name="comment" rows="5" placeholder="Text input"></textarea>
               </label>
-            
+
               <label class="flex privacy-polisy">
-                <input class="windows-checkbox" type="checkbox" name="privacy-polisy" value="privacy-polisy" required>
+                <input class="checkbox-input" type="checkbox" name="privacy-polisy" value="privacy-polisy-yes" required>
+                <span class="windows-checkbox"></span>
                 <span class="polisy-text">I accept the terms and conditions of the <a class="polisy-link" href="/">Privacy Policy</a></span>
               </label>
 
@@ -81,7 +91,6 @@
                 Send
               </button>
             </form>
-
           </div>
         </div>
       </section>
