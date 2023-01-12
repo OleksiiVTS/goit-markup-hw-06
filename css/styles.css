@@ -107,6 +107,21 @@ img {
     border-radius: 4px;
   }
 }
+@keyframes hoverClouseButton {
+  0% {
+    color:var(--color-hader);
+    background: #F4F4FD;
+    border-radius: 50%px;
+    fill: var(--color-text)
+    
+  }
+  100% {
+    color: var(--color-text-light);
+    background: #404BBF;
+    border-radius: 50%;
+    fill: #fff
+  }
+}
 @keyframes hoverTurquoiseButton {
   0% {
     background: rgba(255, 255, 255, 0.1);  
@@ -456,6 +471,10 @@ img {
   pointer-events: none;
 }
 .bakdrop {
+  transition-property: opacity scale visibility;
+  transition-duration: 200ms;
+  transition-timing-function: linear;
+  
   position: fixed;
   display: flex;
   align-items: center;
@@ -466,13 +485,17 @@ img {
   left: 0;
   background: rgba(46, 47, 66, 0.4);
 }
+.bakdrop.is-hidden .window {
+  transform: scale(0.5);
+}
 .window {
-  animation-name: startModalWindow;
-  animation-duration: 1500ms;
-  animation-timing-function: linear;
+  transform: scale(1);
+  transition-duration: 200ms;
+  transition-timing-function: linear;
+   
   position: fixed;
   width: 408px;
-  height: 576px;
+  min-height: 576px;
   padding: 24px;
   
   background: #FCFCFC;
@@ -481,6 +504,7 @@ img {
               0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
 }
+
 .button-clouse {
   width: 24px;
   height: 24px;
@@ -496,22 +520,13 @@ img {
   fill: #000;
 }
 .button-clouse:hover {
+  animation-name: hoverClouseButton;
   animation-duration: 250ms;
   animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  background: var(--color-hader);
+  animation-fill-mode: both;
   fill: #fff
 }
-/* Анімація */
-@keyframes startModalWindow {
-  0% {
-    opacity: 0;
-    transform: scale(0);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
+
 .window-h {
   margin-bottom: 14px;
   font-weight: 500;
